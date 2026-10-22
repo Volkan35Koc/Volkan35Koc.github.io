@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>İbrahim Volkan Koç | Junior Data Analyst</title>
+
+  <meta
+    name="description"
+    content="Portfolio of İbrahim Volkan Koç, a Junior Data Analyst focused on Python, SQL, data analysis, visualization, and applied machine learning."
+  >
+  <meta name="author" content="İbrahim Volkan Koç">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --background: #ffffff;
+      --surface: #f7f8fa;
+      --text: #202a38;
+      --muted: #667085;
+      --navy: #17365d;
+      --border: #e5e9ef;
+      --accent: #315d88;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #8bb7e3;
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #505b6a;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .nav-links .contact-link {
+      padding: 10px 16px;
+      border: 1px solid #cfd7e2;
+      border-radius: 5px;
+      color: var(--navy);
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 8px 12px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--text);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    /* Introduction */
+
+    .hero {
+      padding: 100px 0 88px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.25;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin-bottom: 22px;
+      font-size: clamp(38px, 6vw, 62px);
+      font-weight: 800;
+      letter-spacing: -2.8px;
+    }
+
+    .hero h1 span {
+      color: var(--navy);
+    }
+
+    .hero-description {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 19px;
+      border: 1px solid var(--navy);
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #244b76;
+    }
+
+    .button-secondary {
+      background: white;
+      color: var(--navy);
+    }
+
+    .button-secondary:hover {
+      background: var(--surface);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-meta span::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      margin: 0 9px 2px 0;
+      background: #527ba4;
+      border-radius: 50%;
+    }
+
+    /* Shared sections */
+
+    .section {
+      padding: 82px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-heading {
+      margin-bottom: 36px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(27px, 4vw, 36px);
+      letter-spacing: -1.1px;
+    }
+
+    .section-intro {
+      max-width: 690px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      margin-bottom: 17px;
+      color: #566171;
+      font-size: 15px;
+    }
+
+    .about-note {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .about-note h3 {
+      margin-bottom: 16px;
+      font-size: 17px;
+    }
+
+    .about-note ul {
+      padding-left: 18px;
+      color: #566171;
+      font-size: 14px;
+    }
+
+    .about-note li {
+      margin-bottom: 10px;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-group {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .skill-group h3 {
+      margin-bottom: 17px;
+      font-size: 16px;
+    }
+
+    .skill-group p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      min-height: 290px;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .project:hover {
+      border-color: #bdcad9;
+      transform: translateY(-3px);
+    }
+
+    .project-number {
+      margin-bottom: 19px;
+      color: #78889b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+    }
+
+    .project h3 {
+      margin-bottom: 12px;
+      font-size: 19px;
+      letter-spacing: -0.3px;
+    }
+
+    .project p {
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      margin-bottom: 22px;
+    }
+
+    .tag {
+      padding: 4px 9px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: #526174;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .project-link {
+      align-self: flex-start;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .project-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Experience */
+
+    .timeline {
+      max-width: 850px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 185px 1fr;
+      gap: 28px;
+      padding: 27px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline-date {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .timeline-content h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .timeline-company {
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .timeline-content ul {
+      padding-left: 19px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline-content li {
+      margin-bottom: 7px;
+    }
+
+    /* Education and certifications */
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .credential-column h3 {
+      margin-bottom: 20px;
+      font-size: 19px;
+    }
+
+    .credential {
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .credential strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .credential p,
+    .credential span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Contact */
+
+    .contact-section {
+      padding: 76px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .contact-content h2 {
+      margin-bottom: 12px;
+      font-size: clamp(26px, 4vw, 35px);
+      letter-spacing: -1px;
+    }
+
+    .contact-content p {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      padding: 25px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-content p,
+    .footer-links a {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--navy);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 32px, var(--max-width));
+      }
+
+      .nav {
+        min-height: 68px;
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: inline-block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-bottom: 14px;
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 11px 0;
+        font-size: 14px;
+      }
+
+      .nav-links .contact-link {
+        padding: 10px 12px;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 68px 0 60px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.7px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-meta {
+        gap: 10px 18px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .credentials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        min-height: auto;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="İbrahim Volkan Koç home">
+        İbrahim Volkan <span>Koç</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        Menu
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a class="contact-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">Data Analysis · Reporting · Visualization</p>
+
+        <h1>
+          İbrahim Volkan <span>Koç</span>
+        </h1>
+
+        <p class="hero-description">
+          Junior Data Analyst with a background in Management Information
+          Systems. Interested in using Python, SQL, and statistical methods
+          to explore datasets, identify patterns, and communicate findings
+          clearly.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">
+            View Selected Projects
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://www.linkedin.com/in/ibrahimvolkankoc35/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn Profile ↗
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Management Information Systems Graduate</span>
+          <span>Based in Türkiye</span>
+          <span>Open to Entry-Level Opportunities</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>Profile</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I am a Management Information Systems graduate interested in
+              data analysis, statistical reasoning, and practical
+              data-driven problem-solving.
+            </p>
+
+            <p>
+              My project work has involved data cleaning, exploratory data
+              analysis, visualization, and introductory machine learning.
+              I use Python and its data analysis libraries to investigate
+              datasets and present results in a structured way.
+            </p>
+
+            <p>
+              I aim to develop my analytical skills through practical work,
+              collaboration, and continuous learning while contributing to
+              teams that use data to support business decisions.
+            </p>
+          </div>
+
+          <aside class="about-note">
+            <h3>Areas of Focus</h3>
+            <ul>
+              <li>Data cleaning and validation</li>
+              <li>Exploratory data analysis</li>
+              <li>Statistical analysis</li>
+              <li>Data visualization and reporting</li>
+              <li>Foundational machine learning</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Technical Skills</h2>
+          <p class="section-intro">
+            Tools and methods used in coursework, training, and personal
+            projects.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3>Programming & Querying</h3>
+            <p>Python<br>SQL</p>
+          </article>
+
+          <article class="skill-group">
+            <h3>Data Analysis</h3>
+            <p>Pandas<br>NumPy<br>SciPy</p>
+          </article>
+
+          <article class="skill-group">
+            <h3>Visualization</h3>
+            <p>Matplotlib<br>Seaborn</p>
+          </article>
+
+          <article class="skill-group">
+            <h3>Machine Learning</h3>
+            <p>Scikit-learn<br>Regression<br>Model Evaluation</p>
+          </article>
+
+          <article class="skill-group">
+            <h3>Analytical Methods</h3>
+            <p>Data Cleaning<br>Exploratory Data Analysis<br>Feature Analysis</p>
+          </article>
+
+          <article class="skill-group">
+            <h3>Business Tools</h3>
+            <p>Excel<br>Power BI<br>Tableau</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Projects</h2>
+          <p class="section-intro">
+            Practical projects covering exploratory analysis,
+            regression, classification, and business performance.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project">
+            <p class="project-number">PROJECT 01</p>
+            <h3>Coffee Sales Analysis</h3>
+            <p>
+              An exploratory analysis of coffee sales data, covering data
+              validation, revenue patterns, product categories, time-based
+              trends, moving averages, and visual summaries.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">EDA</span>
+              <span class="tag">Visualization</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/Volkan35Koc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore on GitHub ↗
+            </a>
+          </article>
+
+          <article class="project">
+            <p class="project-number">PROJECT 02</p>
+            <h3>Wine Tasting Score Prediction</h3>
+            <p>
+              A regression project comparing Linear Regression, Decision
+              Tree, K-Nearest Neighbors, and Random Forest models using
+              evaluation metrics and cross-validation.
+            </p>
+            <div class="tags">
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Regression</span>
+              <span class="tag">MAE / RMSE</span>
+              <span class="tag">R²</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/Volkan35Koc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore on GitHub ↗
+            </a>
+          </article>
+
+          <article class="project">
+            <p class="project-number">PROJECT 03</p>
+            <h3>Accent Classification</h3>
+            <p>
+              An audio classification project using feature extraction
+              and machine learning. The project achieved 80.3% accuracy
+              in the reported evaluation.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Librosa</span>
+              <span class="tag">MFCC</span>
+              <span class="tag">Random Forest</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/Volkan35Koc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore on GitHub ↗
+            </a>
+          </article>
+
+          <article class="project">
+            <p class="project-number">PROJECT 04</p>
+            <h3>Supermarket Sales & Profitability</h3>
+            <p>
+              An analysis project focused on examining sales and
+              profitability data to investigate business performance
+              and identify useful patterns.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Business Insights</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/Volkan35Koc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore on GitHub ↗
+            </a>
+          </article>
+        </div>
+
+        <p class="project-note">
+          Project links currently lead to the GitHub profile. Replace them
+          with the corresponding repository URLs before publishing.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Background</p>
+          <h2>Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Nov 2024 – Aug 2025</div>
+            <div class="timeline-content">
+              <h3>Data Science Fellow</h3>
+              <p class="timeline-company">
+                Yapay Zeka ve Teknoloji Akademisi · Remote
+              </p>
+              <ul>
+                <li>
+                  Participated in training focused on data analysis,
+                  statistics, Python, regression, and machine learning.
+                </li>
+                <li>
+                  Developed practical knowledge through analytical
+                  exercises and project-based learning.
+                </li>
+                <li>
+                  Completed the Google Advanced Data Analytics
+                  learning program.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Jul 2024 – Aug 2024</div>
+            <div class="timeline-content">
+              <h3>Information Technology Intern</h3>
+              <p class="timeline-company">
+                İzmir Demokrasi University · İzmir, Türkiye
+              </p>
+              <ul>
+                <li>
+                  Assisted with website content review and migration
+                  of legacy news and announcements.
+                </li>
+                <li>
+                  Worked on SQL database tasks and data management.
+                </li>
+                <li>
+                  Contributed to dynamic web pages using HTML, CSS,
+                  and JavaScript.
+                </li>
+                <li>
+                  Helped prepare digital documentation and IT guides.
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Qualifications</p>
+          <h2>Education & Certifications</h2>
+        </div>
+
+        <div class="credentials-grid">
+          <div class="credential-column">
+            <h3>Education</h3>
+
+            <div class="credential">
+              <strong>Bachelor's Degree in Management Information Systems</strong>
+              <p>Bandırma Onyedi Eylül University</p>
+              <span>2021 – 2025</span>
+            </div>
+          </div>
+
+          <div class="credential-column">
+            <h3>Certifications</h3>
+
+            <div class="credential">
+              <strong>Google Advanced Data Analytics Certificate</strong>
+              <p>Google / Coursera</p>
+              <span>Completed July 2025</span>
+            </div>
+
+            <div class="credential">
+              <strong>Python Essentials 1</strong>
+              <p>Cisco Networking Academy</p>
+              <span>September 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-content">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let's connect.</h2>
+          <p>
+            For entry-level data analysis opportunities, professional
+            discussions, or project collaboration, feel free to get in touch.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a
+            class="button button-primary"
+            href="mailto:volkankoc3535@outlook.com"
+          >
+            Email Me
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://www.linkedin.com/in/ibrahimvolkankoc35/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>
+        © <span id="current-year"></span> İbrahim Volkan Koç
+      </p>
+
+      <div class="footer-links">
+        <a
+          href="https://github.com/Volkan35Koc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://www.kaggle.com/brahimvolkanko"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kaggle
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ibrahimvolkankoc35/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
